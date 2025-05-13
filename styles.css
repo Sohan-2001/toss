@@ -11,82 +11,59 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     width: 90%;
+    max-width: 400px;
+    height: 500px; /* Fixed height to prevent scrolling */
+    position: relative;
     animation: fadeIn 1s ease-in;
 }
 
 h1 {
     color: #333;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 2em;
+    margin-bottom: 15px;
 }
 
 .input-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.player {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-label {
-    font-size: 1.2em;
-    color: #555;
-}
-
-input {
-    padding: 10px;
+.player input {
+    padding: 8px;
     font-size: 1em;
     border: 2px solid #74ebd5;
-    border-radius: 10px;
+    border-radius: 8px;
     outline: none;
-    transition: border-color 0.3s;
+    width: 100%;
 }
 
-input:focus {
+.player input:focus {
     border-color: #acb6e5;
 }
 
-button {
-    padding: 12px 30px;
-    font-size: 1.2em;
-    background: #74ebd5;
-    border: none;
-    border-radius: 10px;
-    color: #333;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-}
-
-button:hover {
-    transform: scale(1.05);
-    background: #acb6e5;
-}
-
 .coin {
-    width: 150px;
-    height: 150px;
-    margin: 30px auto;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
     position: relative;
     transform-style: preserve-3d;
+    cursor: pointer;
     transition: transform 0.1s;
+}
+
+.coin:hover {
+    transform: scale(1.1);
 }
 
 .head, .tail {
@@ -97,10 +74,10 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     backface-visibility: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .head {
@@ -116,9 +93,12 @@ button:hover {
 }
 
 .result {
-    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
     color: #333;
-    margin-top: 20px;
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -126,6 +106,31 @@ button:hover {
 .result.show {
     opacity: 1;
     animation: bounceIn 0.5s ease-out;
+}
+
+.toss-again {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #74ebd5;
+    border: none;
+    border-radius: 8px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.toss-again.show {
+    display: block;
+}
+
+.toss-again:hover {
+    transform: scale(1.05);
+    background: #acb6e5;
 }
 
 /* Animations */
@@ -142,7 +147,7 @@ button:hover {
 
 @keyframes toss {
     0% { transform: translateY(0) rotateY(0deg); }
-    50% { transform: translateY(-200px) rotateY(720deg); }
+    50% { transform: translateY(-150px) rotateY(720deg); }
     100% { transform: translateY(0) rotateY(1440deg); }
 }
 
