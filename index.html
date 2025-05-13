@@ -8,27 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Coin Toss Game</h1>
+        <h1>Coin Toss</h1>
         <div class="input-section">
             <div class="player">
-                <label for="head-player">Player for Heads:</label>
-                <input type="text" id="head-player" placeholder="Enter name for Heads">
+                <input type="text" id="tosser-one" placeholder="Tosser One (Heads)">
             </div>
             <div class="player">
-                <label for="tail-player">Player for Tails:</label>
-                <input type="text" id="tail-player" placeholder="Enter name for Tails">
+                <input type="text" id="tosser-two" placeholder="Tosser Two (Tails)">
             </div>
-            <button onclick="tossCoin()">Toss Coin</button>
         </div>
-        <div class="coin" id="coin">
+        <div class="coin" id="coin" onclick="tossCoin()">
             <div class="head">Head</div>
-            <div class="tail">Tail</div>
+            <div class="tail">Tail</ - Tail</div>
         </div>
         <div class="result" id="result"></div>
+        <button class="toss-again" id="toss-again" onclick="resetToss()">Toss Again</button>
     </div>
-    <!-- Audio elements for sound effects -->
-    <audio id="toss-sound" src="toss.mp3"></audio>
-    <audio id="result-sound" src="result.mp3"></audio>
     <script src="script.js"></script>
 </body>
 </html>
