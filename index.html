@@ -9,17 +9,20 @@
 <body>
     <div class="container">
         <h1>Coin Toss</h1>
-        <div class="input-section">
+        <div class="input-section" id="input-section">
             <div class="player">
-                <input type="text" id="tosser-one" placeholder="Tosser One">
+                <input type="text" id="tosser-1" placeholder="Tosser One">
             </div>
             <div class="player">
-                <input type="text" id="tosser-two" placeholder="Tosser Two">
+                <input type="text" id="tosser-2" placeholder="Tosser Two">
             </div>
         </div>
-        <div class="coin" id="coin" onclick="tossCoin()">
-            <div class="side-one" id="side-one">Tosser One</div>
-            <div class="side-two" id="side-two">Tosser Two</div>
+        <button class="add-user" id="add-user" onclick="addUser()">Add User</button>
+        <div class="shape-container" id="shape-container">
+            <div class="shape coin" id="shape" onclick="tossShape()">
+                <div class="side" id="side-1">Tosser One</div>
+                <div class="side" id="side-2">Tosser Two</div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
