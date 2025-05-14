@@ -15,34 +15,34 @@ body {
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 400px;
-    height: 450px; /* Compact height to prevent scrolling */
+    max-width: 350px;
+    height: 400px; /* Compact height */
     position: relative;
     animation: fadeIn 1s ease-in;
 }
 
 h1 {
     color: #333;
-    font-size: 2em;
+    font-size: 1.8em;
     margin-bottom: 15px;
 }
 
 .input-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .player input {
     padding: 8px;
     font-size: 1em;
-    border: 2px solid #74ebd5;
+    border: 1px solid #74ebd5;
     border-radius: 8px;
     outline: none;
     width: 100%;
@@ -66,14 +66,6 @@ h1 {
     transform: scale(1.1);
 }
 
-.coin.result {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateY(0deg);
-    margin: 0;
-}
-
 .side-one, .side-two {
     position: absolute;
     width: 100%;
@@ -82,7 +74,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
     backface-visibility: hidden;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -103,31 +95,6 @@ h1 {
     transform: translateZ(-1px) rotateY(180deg);
 }
 
-.toss-again {
-    display: none;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    font-size: 1em;
-    background: #74ebd5;
-    border: none;
-    border-radius: 8px;
-    color: #333;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-}
-
-.toss-again.show {
-    display: block;
-}
-
-.toss-again:hover {
-    transform: scale(1.05);
-    background: #acb6e5;
-}
-
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
@@ -136,7 +103,7 @@ h1 {
 
 @keyframes toss {
     0% { transform: translateY(0) rotateY(0deg); }
-    50% { transform: translateY(-150px) rotateY(720deg); }
+    50% { transform: translateY(-100px) rotateY(720deg); }
     100% { transform: translateY(0) rotateY(1440deg); }
 }
 
