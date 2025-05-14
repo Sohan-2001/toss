@@ -11,17 +11,16 @@
         <h1>Coin Toss</h1>
         <div class="input-section">
             <div class="player">
-                <input type="text" id="tosser-one" placeholder="Tosser One (Heads)">
+                <input type="text" id="tosser-one" placeholder="Tosser One">
             </div>
             <div class="player">
-                <input type="text" id="tosser-two" placeholder="Tosser Two (Tails)">
+                <input type="text" id="tosser-two" placeholder="Tosser Two">
             </div>
         </div>
         <div class="coin" id="coin" onclick="tossCoin()">
-            <div class="head">Head</div>
-            <div class="tail">Tail</ - Tail</div>
+            <div class="side-one" id="side-one">Tosser One</div>
+            <div class="side-two" id="side-two">Tosser Two</div>
         </div>
-        <div class="result" id="result"></div>
         <button class="toss-again" id="toss-again" onclick="resetToss()">Toss Again</button>
     </div>
     <script src="script.js"></script>
